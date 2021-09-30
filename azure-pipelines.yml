@@ -45,7 +45,7 @@ stages:
         inlineScript: |
           id=$(az container create \
                       --name testtwo \
-                      --resource-group TFSbija
+                      --resource-group TFSbija \
                       --image mcr.microsoft.com/azuredocs/aci-helloworld \
                       --os-type Linux \
                       --cpu 1 \
