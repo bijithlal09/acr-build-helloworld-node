@@ -42,14 +42,4 @@ stages:
         azureSubscription: 'rthirad Microsoft Azure Internal Consumption (0238dd30-4a83-4f77-9687-22f94005c3d4)'
         scriptType: 'bash'
         scriptLocation: 'inlineScript'
-        inlineScript: |
-          id=$(az container create \
-                      --name testtwo \
-                      --resource-group TFSbija \
-                      --image mcr.microsoft.com/azuredocs/aci-helloworld \
-                      --os-type Linux \
-                      --cpu 1 \
-                      --memory 2 \
-                      --network-profile /subscriptions/d9e34bcf-6b0a-4358-8fab-c5dfae5fd974/resourceGroups/backend-assoconnect-prod-rg/providers/Microsoft.Network/networkProfiles/worker-back-assoconnect-frc-prod-acinpn \
-                      --query "id" \
-                      --output tsv)
+        inlineScript: 'id=$(az container create --name testtwo --resource-group TFSbija --image mcr.microsoft.com/azuredocs/aci-helloworld --os-type Linux --cpu 1 --memory 1.5 --network-profile /subscriptions/0238dd30-4a83-4f77-9687-22f94005c3d4/resourceGroups/TFSbija/providers/Microsoft.Network/networkProfiles/aci-network-profile-TestforACI-second --query "id" --output tsv)'
