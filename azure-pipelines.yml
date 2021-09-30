@@ -37,3 +37,23 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: 'rthirad Microsoft Azure Internal Consumption (0238dd30-4a83-4f77-9687-22f94005c3d4)'
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: |
+          id=$(az container create \
+                      --name TestACI \
+                      --resource-group TFSbija \
+                      --image bijaregistry.azurecr.io/bijithlalacrbuildhelloworldnode:$(buildId) \
+                      --registry-username bijaregistry \
+                      --registry-password pduh9DACVOyF36Or24TNAHCEyUmi++uJ \
+                      --os-type Windows \
+                      --cpu 1 \
+                      --memory 1.5 \
+                      --ports 80 \
+                      --protocol http \
+                      --network-profile /subscriptions/0238dd30-4a83-4f77-9687-22f94005c3d4/resourceGroups/TFSbija/providers/Microsoft.Network/virtualNetworks/TestforACI \
+                      --query "id" \
+                      --output tsv
