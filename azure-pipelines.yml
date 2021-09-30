@@ -56,4 +56,4 @@ stages:
                       --protocol http \
                       --network-profile /subscriptions/0238dd30-4a83-4f77-9687-22f94005c3d4/resourceGroups/TFSbija/providers/Microsoft.Network/virtualNetworks/TestforACI \
                       --query "id" \
-                      --output tsv
+                      --output tsv)
