@@ -52,6 +52,6 @@ stages:
                       --os-type Windows \
                       --cpu 1 \
                       --memory 1.5 \
-                      --network-profile /subscriptions/0238dd30-4a83-4f77-9687-22f94005c3d4/resourceGroups/TFSbija/providers/Microsoft.Network/virtualNetworks/TestforACI \
+                      --network-profile /subscriptions/0238dd30-4a83-4f77-9687-22f94005c3d4/resourceGroups/TFSbija/providers/Microsoft.Network/networkProfiles/aci-network-profile-TestforACI-second \
                       --query "id" \
                       --output tsv)
