@@ -42,16 +42,4 @@ stages:
         azureSubscription: 'rthirad Microsoft Azure Internal Consumption (0238dd30-4a83-4f77-9687-22f94005c3d4)'
         scriptType: 'bash'
         scriptLocation: 'inlineScript'
-        inlineScript: |
-          id=$(az container create \
-                      --name testaci-fre \
-                      --resource-group TFSbija \
-                      --image bijaregistry.azurecr.io/bijithlalacrbuildhelloworldnode:$(buildId) \
-                      --registry-username bijaregistry \
-                      --registry-password $(pwd) \
-                      --os-type Windows \
-                      --cpu 1 \
-                      --memory 1.5 \
-                      --network-profile /subscriptions/0238dd30-4a83-4f77-9687-22f94005c3d4/resourceGroups/TFSbija/providers/Microsoft.Network/networkProfiles/aci-network-profile-TestforACI-second \
-                      --query "id" \
-                      --output tsv)
+        inlineScript: 'id=$(az container create --name testaci-fre --resource-group TFSbija --image mcr.microsoft.com/azuredocs/aci-helloworld --os-type Linux --cpu 1 --memory 1.5 --network-profile /subscriptions/0238dd30-4a83-4f77-9687-22f94005c3d4/resourceGroups/TFSbija/providers/Microsoft.Network/networkProfiles/aci-network-profile-TestforACI-second --query "id" --output tsv)'
