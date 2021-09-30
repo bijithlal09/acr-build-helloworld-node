@@ -48,7 +48,7 @@ stages:
                       --resource-group TFSbija \
                       --image bijaregistry.azurecr.io/bijithlalacrbuildhelloworldnode:$(buildId) \
                       --registry-username bijaregistry \
-                      --registry-password pduh9DACVOyF36Or24TNAHCEyUmi++uJ \
+                      --registry-password $(pwd) \
                       --os-type Windows \
                       --cpu 1 \
                       --memory 1.5 \
