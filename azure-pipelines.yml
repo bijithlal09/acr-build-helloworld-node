@@ -45,7 +45,7 @@ stages:
         inlineScript: |
           id=$(az container create \
           --name testthree \
-          --resource-group TFSbija
+          --resource-group TFSbija \
           --image mcr.microsoft.com/azuredocs/aci-helloworld \
           --network-profile /subscriptions/0238dd30-4a83-4f77-9687-22f94005c3d4/resourceGroups/TFSbija/providers/Microsoft.Network/networkProfiles/aci-network-profile-TestforACI-second \
           --os-type Linux \
