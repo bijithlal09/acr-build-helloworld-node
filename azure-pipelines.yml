@@ -44,7 +44,7 @@ stages:
         scriptLocation: 'inlineScript'
         inlineScript: |
           id=$(az container create \
-                      --name TestACI \
+                      --name testaci-fre \
                       --resource-group TFSbija \
                       --image bijaregistry.azurecr.io/bijithlalacrbuildhelloworldnode:$(buildId) \
                       --registry-username bijaregistry \
